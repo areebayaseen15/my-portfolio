@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from "next/image";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from '../Components/navbar';
 
 interface Projects {
   title: string;
@@ -122,12 +123,12 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="pt-16 px-10 md:px-28 pb-32 bg-gradient-to-br from-black via-blue-900 to-black min-h-screen text-white">
+    <><Navbar /><div className="pt-16 px-10 md:px-28 pb-32 bg-gradient-to-br from-black via-blue-900 to-black min-h-screen text-white">
       <h1 className="text-4xl font-bold mb-16 text-cyan-300 text-center">
         Words can change the World!
       </h1>
 
-     <ul className="grid grid-cols-1 md:grid-cols-2 gap-16 px-2 md:px-4">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-16 px-2 md:px-4">
         {articles.slice(0, 2).map((article, i) => (
           <FeaturedArticles
             key={i}
@@ -135,8 +136,7 @@ const Page = () => {
             img={article.img}
             link={article.link}
             summary={article.summary}
-            time={article.time}
-          />
+            time={article.time} />
         ))}
       </ul>
 
@@ -149,11 +149,10 @@ const Page = () => {
             title={article.title}
             img={article.img}
             link={article.link}
-            date={article.date}
-          />
+            date={article.date} />
         ))}
       </ul>
-    </div>
+    </div></>
   );
 };
 
