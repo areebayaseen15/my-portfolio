@@ -92,7 +92,7 @@ const Skill = () => {
 
   return (
     <div
-      id="Skills"
+      id="skill"
       className="relative bg-gradient-to-r from-black via-blue-900 to-black py-24 text-white overflow-hidden"
     >
       {/* Background Animation */}
