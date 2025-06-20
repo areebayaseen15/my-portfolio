@@ -5,7 +5,6 @@ import Typewriter from "typewriter-effect";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Navbar from "./navbar";
 
 export default function Hero() {
   useEffect(() => {
@@ -13,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <><Navbar /><section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-black via-blue-900 to-black text-white overflow-hidden">
+    <><section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-black via-blue-900 to-black text-white overflow-hidden">
       {/* === Animated Gradient Blobs === */}
       <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-cyan-500 opacity-30 blur-3xl rounded-full animate-pulse z-0" />
       <div className="absolute top-1/4 right-[-150px] w-[300px] h-[300px] bg-blue-500 opacity-20 blur-2xl rounded-full animate-ping z-0" />
