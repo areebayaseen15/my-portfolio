@@ -123,7 +123,7 @@ export default function MarqueeProjects() {
   );
 
   return (
-    <div className="relative bg-gradient-to-r from-black via-blue-900 to-black py-20 text-white overflow-hidden">
+    <div id="projects"  className=" relative bg-gradient-to-r from-black via-blue-900 to-black py-20 text-white overflow-hidden">
       {/* Background animation blobs */}
       <div className="absolute -top-40 -left-40 w-[400px] h-[400px] bg-cyan-400 opacity-20 rounded-full blur-3xl animate-pulse z-0" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-500 opacity-10 rounded-full blur-2xl animate-ping z-0" />
