@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Typewriter from 'typewriter-effect';
+import Navbar from './navbar';
 
 type TabKey = 'education' | 'skills' | 'experience';
 
@@ -47,10 +48,9 @@ const AboutMe = () => {
       </>
     ),
   };
-
   return (
-    <section
-      id="AboutMe"
+    <><section
+      id="About"
       className="relative bg-gradient-to-r from-black via-blue-900 to-black text-white py-20 overflow-hidden"
     >
       {/* Background animation blobs */}
@@ -72,8 +72,7 @@ const AboutMe = () => {
                 strings: ['"Designing with empathy. Coding with clarity."'],
                 autoStart: true,
                 loop: true,
-              }}
-            />
+              }} />
           </div>
 
           <p className="text-gray-300 text-base leading-relaxed">
@@ -97,11 +96,9 @@ const AboutMe = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition ${
-                  activeTab === tab
+                className={`px-4 py-2 rounded-md text-sm font-medium transition ${activeTab === tab
                     ? 'bg-cyan-600 text-white'
-                    : 'bg-black/30 border border-cyan-500 text-cyan-300 hover:bg-cyan-700 hover:text-white'
-                }`}
+                    : 'bg-black/30 border border-cyan-500 text-cyan-300 hover:bg-cyan-700 hover:text-white'}`}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
@@ -109,14 +106,14 @@ const AboutMe = () => {
           </div>
 
           {/* Animated gradient border card */}
-<div className="relative group rounded-xl p-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:300%_300%] animate-border overflow-hidden">
-  <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 min-h-[180px]">
-    {tabs[activeTab]}
-  </div>
-</div>
+          <div className="relative group rounded-xl p-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-[length:300%_300%] animate-border overflow-hidden">
+            <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 min-h-[180px]">
+              {tabs[activeTab]}
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </section></>
   );
 };
 
