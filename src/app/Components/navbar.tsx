@@ -21,11 +21,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "#about" },        // 💡 Make sure AboutMe section has id="about"
-    { name: "Skills", href: "#skills" },      // 💡 id="skills" in Skills component
+    { name: "About", href: "#About" },        
+    { name: "Skills", href: "#skill" },     
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Articles", href: "/Articles" },  // Route-based, so no hash
+    { name: "Articles", href: "/Articles" },  
   ];
 
   return (
@@ -103,3 +103,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
