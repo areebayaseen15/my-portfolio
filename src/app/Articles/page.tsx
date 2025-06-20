@@ -19,7 +19,7 @@ interface Projects {
 const articles: Projects[] = [
   {
     title: "Dependency Injection in FastAPI — Simplify Your Code Like a Pro",
-    img: "/Assest/Pictures/Dependency_injection.png",
+    img: "/Assest/Pictures/dependency.png",
     link: "https://medium.com/p/810b8ce80660",
     date: "May 13, 2025",
     time: "7 min read",
