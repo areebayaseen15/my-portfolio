@@ -9,7 +9,6 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState<string>("/");
 
   useEffect(() => {
-    // Set active link on initial load
     if (typeof window !== "undefined") {
       setActiveLink(window.location.hash || "/");
     }
@@ -22,11 +21,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "#AboutMe" },
-    { name: "Skills", href: "#Skills" },
+    { name: "About", href: "#about" },        // 💡 Make sure AboutMe section has id="about"
+    { name: "Skills", href: "#skills" },      // 💡 id="skills" in Skills component
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Articles", href: "/Articles" },
+    { name: "Articles", href: "/Articles" },  // Route-based, so no hash
   ];
 
   return (
@@ -35,7 +34,7 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between p-4 md:px-8">
           {/* Logo */}
           <div className="text-2xl font-bold font-mono tracking-wide">
-            <Link href="/" scroll={false} className="flex items-center space-x-1 hover:text-cyan-400 transition duration-300">
+            <Link href="/" className="flex items-center space-x-1 hover:text-cyan-400 transition duration-300">
               <span>&lt;</span>
               <span>Areeba</span>
               <span className="text-cyan-400">Yaseen</span>
@@ -58,7 +57,6 @@ const Navbar = () => {
               <div key={link.name} className="relative group">
                 <Link
                   href={link.href}
-                  scroll={false}
                   onClick={() => handleLinkClick(link.href)}
                   className={`hover:text-cyan-300 transition duration-300`}
                 >
@@ -83,7 +81,6 @@ const Navbar = () => {
               <div key={link.name} className="relative group">
                 <Link
                   href={link.href}
-                  scroll={false}
                   onClick={() => handleLinkClick(link.href)}
                   className="hover:text-cyan-300 transition duration-300"
                 >
