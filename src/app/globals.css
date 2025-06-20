@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 12s linear infinite;
+  }
+}
+.custom-image{
+    background-image: url("../../public/Assest/Pictures/download\ \(1\).jpeg")
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes snakeBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border {
+  animation: snakeBorder 4s linear infinite;
+}
+
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+@keyframes snakeBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blob1 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+}
+
+@keyframes blob2 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.1);
+  }
+}
+
+.animated-bg-blur::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #0ff 0%, transparent 70%);
+  border-radius: 9999px;
+  filter: blur(80px);
+  z-index: 0;
+  animation: blob1 10s ease-in-out infinite;
+  top: -100px;
+  left: -100px;
+}
+
+.animated-bg-blur::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+  border-radius: 9999px;
+  filter: blur(60px);
+  z-index: 0;
+  animation: blob2 12s ease-in-out infinite;
+  bottom: -80px;
+  right: -80px;
+}
+
+
+@keyframes borderSpin {
+  0% {
+    border-image: linear-gradient(45deg, cyan, blue) 1;
+    transform: rotate(0deg);
+  }
+  100% {
+    border-image: linear-gradient(360deg, cyan, blue) 1;
+    transform: rotate(360deg);
+  }
+}
+
+.animate-borderSpin {
+  animation: borderSpin 5s linear infinite;
+}
