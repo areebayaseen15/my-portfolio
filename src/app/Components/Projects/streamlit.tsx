@@ -20,7 +20,7 @@ export default function StreamlitAppProjects() {
   return (
     <div
       id="streamlit"
-      className="bg-black py-20 px-4 text-white"
+      className="bg-gradient-to-r from-black via-blue-900  py-20 px-4 text-white"
     >
       <div className="text-center mb-12" data-aos="fade-up">
         <h1 className="text-4xl font-extrabold text-cyan-300 mb-4">
