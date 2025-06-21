@@ -44,40 +44,35 @@ const articles: Projects[] = [
 const FeaturedArticles = ({ img, time, title, link, summary }: Projects) => {
   return (
     <li
-      className="relative col-span-1 w-full p-0 rounded-2xl border border-cyan-400 bg-black/40 overflow-hidden shadow-lg"
+      className="w-full rounded-2xl border border-cyan-400 bg-black/40 shadow-md overflow-hidden transition-all"
       data-aos="fade-up"
     >
-      {/* Image Section */}
       <Link href={link} target="_blank" className="block w-full">
         <Image
           src={img}
           alt={title}
           width={500}
           height={280}
-          className="w-full h-64 object-cover rounded-t-2xl"
+          className="w-full h-52 sm:h-64 object-cover rounded-t-2xl"
         />
       </Link>
 
-      {/* Content Section */}
-      <div className="p-6">
+      <div className="p-5 sm:p-6">
         <Link href={link} target="_blank">
-          <h2 className="capitalize font-bold text-2xl mb-2 text-cyan-300 hover:underline">
-            {title}
-          </h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-cyan-300 hover:underline mb-2">{title}</h2>
         </Link>
-        {summary && <p className="text-sm text-white mb-3">{summary}</p>}
+        {summary && <p className="text-sm sm:text-base text-white mb-3">{summary}</p>}
         {time && <span className="text-yellow-400 text-sm font-medium">{time}</span>}
       </div>
     </li>
   );
 };
 
-
 const MovingImage = ({ img, link, title }: Projects) => {
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   const handleMouse = (event: React.MouseEvent) => {
-    if (imgRef.current) {
+    if (imgRef.current && window.innerWidth >= 768) {
       imgRef.current.style.display = "inline-block";
       imgRef.current.style.left = `${event.pageX + 10}px`;
       imgRef.current.style.top = `${event.pageY - 50}px`;
@@ -91,15 +86,15 @@ const MovingImage = ({ img, link, title }: Projects) => {
   };
 
   return (
-    <Link href={link} target="_blank" onMouseMove={handleMouse} onMouseLeave={handleMouseLeave}>
-      <h2 className="text-xl capitalize font-semibold hover:underline text-white">{title}</h2>
+    <Link href={link} target="_blank" onMouseMove={handleMouse} onMouseLeave={handleMouseLeave} className="relative">
+      <h2 className="text-base sm:text-xl font-semibold hover:underline text-white">{title}</h2>
       <Image
         ref={imgRef}
         src={img}
         width={96}
         height={100}
         alt={title}
-        className="z-10 w-96 h-auto hidden absolute rounded-lg pointer-events-none"
+        className="z-10 w-60 sm:w-96 h-auto hidden absolute rounded-lg pointer-events-none"
       />
     </Link>
   );
@@ -108,11 +103,11 @@ const MovingImage = ({ img, link, title }: Projects) => {
 const Article = ({ img, title, date, link }: Projects) => {
   return (
     <li
-      className="w-full relative p-4 py-6 rounded-xl flex my-4 items-center justify-between bg-black/40 text-white first:mt-0 border border-cyan-400 border-r-4 border-b-4"
+      className="w-full relative px-4 py-5 rounded-xl my-4 flex flex-col sm:flex-row items-start sm:items-center justify-between bg-black/40 text-white border border-cyan-400 border-r-4 border-b-4"
       data-aos="fade-up"
     >
       <MovingImage title={title} img={img} link={link} />
-      <span className="text-yellow-400 text-xl font-semibold pl-4">{date}</span>
+      <span className="text-yellow-400 text-base sm:text-xl font-semibold pt-3 sm:pt-0">{date}</span>
     </li>
   );
 };
@@ -123,36 +118,43 @@ const Page = () => {
   }, []);
 
   return (
-    <><Navbar /><div className="pt-16 px-10 md:px-28 pb-32 bg-gradient-to-br from-black via-blue-900 to-black min-h-screen text-white">
-      <h1 className="text-4xl font-bold mb-16 text-cyan-300 text-center">
-        Words can change the World!
-      </h1>
+    <>
+      <Navbar />
+      <div className="pt-16 px-4 sm:px-10 md:px-28 pb-32 bg-gradient-to-br from-black via-blue-900 to-black min-h-screen text-white">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-16 text-cyan-300 text-center">
+          Words can change the World!
+        </h1>
 
-      <ul className="grid grid-cols-1 md:grid-cols-2 gap-16 px-2 md:px-4">
-        {articles.slice(0, 2).map((article, i) => (
-          <FeaturedArticles
-            key={i}
-            title={article.title}
-            img={article.img}
-            link={article.link}
-            summary={article.summary}
-            time={article.time} />
-        ))}
-      </ul>
+        {/* Featured Articles */}
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 px-2">
+          {articles.slice(0, 2).map((article, i) => (
+            <FeaturedArticles
+              key={i}
+              title={article.title}
+              img={article.img}
+              link={article.link}
+              summary={article.summary}
+              time={article.time}
+            />
+          ))}
+        </ul>
 
-      <h2 className="font-bold w-full text-4xl text-center my-32 text-cyan-300">All Articles</h2>
+        {/* All Articles */}
+        <h2 className="font-bold w-full text-3xl sm:text-4xl text-center my-20 text-cyan-300">All Articles</h2>
 
-      <ul>
-        {articles.map((article, i) => (
-          <Article
-            key={i}
-            title={article.title}
-            img={article.img}
-            link={article.link}
-            date={article.date} />
-        ))}
-      </ul>
-    </div></>
+        <ul>
+          {articles.map((article, i) => (
+            <Article
+              key={i}
+              title={article.title}
+              img={article.img}
+              link={article.link}
+              date={article.date}
+            />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
