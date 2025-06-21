@@ -3,66 +3,100 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaGithub,
+} from 'react-icons/fa';
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+} from 'react-icons/si';
+
+// Tech icon + label mapping
+const techIcons: Record<
+  string,
+  { icon: JSX.Element; label: string }
+> = {
+  html: { icon: <FaHtml5 className="text-orange-500" />, label: 'HTML' },
+  css: { icon: <FaCss3Alt className="text-blue-500" />, label: 'CSS' },
+  js: { icon: <FaJs className="text-yellow-400" />, label: 'JavaScript' },
+  react: { icon: <FaReact className="text-cyan-400" />, label: 'React' },
+  nextjs: { icon: <SiNextdotjs className="text-white" />, label: 'Next.js' },
+  typescript: { icon: <SiTypescript className="text-blue-400" />, label: 'TypeScript' },
+  tailwind: { icon: <SiTailwindcss className="text-teal-300" />, label: 'Tailwind' },
+};
 
 const line1Projects = [
   {
     title: 'LinkedIn Agent',
-    description: 'Posts on LinkedIn using OpenAI Agent SDK.',
-    video: '/Assest/Vedios/agent.mp4',
+    description: 'Automates LinkedIn posting using OpenAI Agent SDK with serverless architecture and async scheduling.',
+    video: '/Assest/Vedios/linkdin-agent.mp4',
     github: 'https://github.com/your-linkedin-agent-repo',
+    tech: ['react', 'nextjs', 'typescript'],
   },
   {
     title: 'Morant Car Rental Website',
-    description: 'Car rental platform using Next.js and Clerk.',
+    description: 'Car rental platform with secure authentication using Clerk, modern UI using Tailwind, and dynamic listings.',
     video: '/Assest/Vedios/Morant-Rental-Car.mp4',
     link: 'https://morant-car-rental-market-place-builder.vercel.app/',
     github: 'https://github.com/your-morant-repo',
+    tech: ['nextjs', 'tailwind'],
   },
   {
     title: 'Ecommerce Shoppers Website',
-    description: 'Responsive shop layout using Next.js.',
+    description: 'E-commerce layout using Next.js with fully responsive design and dynamic cart system integration.',
     video: '/Assest/Vedios/my_shop.mp4',
     link: 'https://my-shop-ecommerce-flax.vercel.app/cart',
     github: 'https://github.com/your-ecommerce-css-repo',
+    tech: ['nextjs', 'tailwind'],
   },
   {
     title: 'On The Trail',
-    description: 'A beautiful blog website.',
+    description: 'Clean and elegant blog website built with vanilla stack focusing on layout, accessibility, and performance.',
     video: '/Assest/Vedios/Blog-web.mp4',
     thumbnail: '/Assest/Thumbnails/blog-thumbnail.jpg',
     link: 'https://milestone-3-blog-website-gray.vercel.app/Contact',
     github: 'https://github.com/your-blog-repo',
+    tech: ['html', 'css', 'js'],
   },
 ];
 
 const line2Projects = [
   {
     title: 'Sidcup Golf',
-    description: 'Multi-page golf site using custom CSS.',
+    description: 'Multi-page responsive golf website built with HTML, CSS, and JS with animations and custom effects.',
     video: '/Assest/Vedios/sidcup_Golf.mp4',
     link: 'https://multiple-pages-website-custom-css.vercel.app/',
     github: 'https://github.com/your-sidcup-repo',
+    tech: ['html', 'css', 'js'],
   },
   {
     title: 'Pix Resume',
-    description: 'Resume builder using TypeScript and HTML.',
+    description: 'Resume builder with live preview using HTML, CSS, and TypeScript. Responsive and styled cleanly.',
     video: '/Assest/Vedios/resume.mp4',
     link: 'https://buildresume123-5y0a67xk7-areeba-yaseens-projects.vercel.app/',
     github: 'https://github.com/areebayaseen15/Resume-Builder/tree/main/Resume-builder-website',
+    tech: ['html', 'css', 'typescript'],
   },
   {
     title: 'Portfolio Website',
-    description: 'My personal dev portfolio.',
+    description: 'Developer portfolio using Tailwind, Next.js, AOS animations, and responsive layout for all screens.',
     video: '/Assest/Vedios/portfolio-tailwind.mp4',
     link: 'https://q2-milestones.vercel.app/',
     github: 'https://github.com/areebayaseen15/Q2-milestones',
+    tech: ['nextjs', 'tailwind'],
   },
   {
     title: 'Virtual Assistant',
-    description: 'Built with HTML, CSS, JS & Gemini API.',
+    description: 'Personal assistant built with Gemini API. Interactive interface with HTML/CSS/JS frontend.',
     video: '/Assest/Vedios/jarvis.mp4',
     link: 'https://banoqabil-final-project.vercel.app/',
     github: 'https://github.com/your-jarvis-repo',
+    tech: ['html', 'css', 'js'],
   },
 ];
 
@@ -74,7 +108,7 @@ export default function MarqueeProjects() {
   const renderCard = (project: any, index: number, line: string) => (
     <div
       key={`${line}-${index}`}
-      className="relative min-w-[330px] max-w-[300px] h-auto rounded-xl overflow-hidden group"
+      className="relative min-w-[250px] sm:min-w-[300px] md:min-w-[330px] max-w-[300px] h-auto rounded-xl overflow-hidden group"
     >
       <div className="animate-snake-border p-[2px] rounded-xl">
         <div className="bg-black/30 backdrop-blur-md h-full rounded-xl flex flex-col overflow-hidden hover:scale-105 transition-transform duration-300">
@@ -90,16 +124,42 @@ export default function MarqueeProjects() {
 
           <div className="p-4 flex flex-col gap-2 text-left">
             <h2 className="text-cyan-300 text-lg font-semibold">{project.title}</h2>
-            <p className="text-sm text-gray-300">{project.description}</p>
-            <div className="flex justify-between items-center mt-2">
-              {project.link && (
-                <Link
-                  href={project.link}
-                  target="_blank"
-                  className="text-white bg-cyan-600 hover:bg-cyan-700 text-sm px-3 py-1 rounded"
+            <p className="text-sm text-gray-300 whitespace-normal break-words">
+  {project.description}
+</p>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap gap-2 mt-2">
+              {project.tech?.map((tech: string, idx: number) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-1 border border-blue-400 rounded-full px-2 py-1 text-xs text-blue-200 bg-blue-900/30"
                 >
-                  View Project
-                </Link>
+                  {techIcons[tech]?.icon}
+                  {techIcons[tech]?.label}
+                </div>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div className="flex justify-between items-center mt-3">
+              {project.link && (
+             <Link
+  href={project.link}
+  target="_blank"
+  className="flex items-center gap-2 border border-cyan-500 text-white text-sm px-3 py-1 rounded-full hover:bg-cyan-700 transition"
+>
+  {/* Live icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-4 w-4 text-cyan-400"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+  >
+    <path d="M12 4.5C7.3 4.5 3.5 8.3 3.5 13s3.8 8.5 8.5 8.5 8.5-3.8 8.5-8.5S16.7 4.5 12 4.5zm0 15c-3.6 0-6.5-2.9-6.5-6.5S8.4 6.5 12 6.5s6.5 2.9 6.5 6.5-2.9 6.5-6.5 6.5zm0-9.5a3 3 0 100 6 3 3 0 000-6z" />
+  </svg>
+  Live
+</Link>
               )}
               {project.github && (
                 <Link
@@ -108,14 +168,7 @@ export default function MarqueeProjects() {
                   className="text-white hover:text-cyan-400"
                   aria-label="GitHub Repo"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    className="w-5 h-5"
-                  >
-                    <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 008.01 10.96c.58.11.79-.25.79-.56v-2.2c-3.26.71-3.95-1.57-3.95-1.57a3.12 3.12 0 00-1.3-1.7c-1.06-.72.08-.71.08-.71a2.48 2.48 0 011.81 1.22 2.51 2.51 0 003.43 1 2.53 2.53 0 01.75-1.59c-2.6-.3-5.33-1.3-5.33-5.81a4.54 4.54 0 011.21-3.14 4.24 4.24 0 01.11-3.09s.98-.31 3.2 1.2a11.07 11.07 0 015.84 0c2.22-1.51 3.2-1.2 3.2-1.2a4.24 4.24 0 01.11 3.09 4.53 4.53 0 011.21 3.14c0 4.53-2.73 5.51-5.34 5.8a2.83 2.83 0 01.81 2.2v3.27c0 .31.21.68.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
-                  </svg>
+                  <FaGithub className="w-5 h-5" />
                 </Link>
               )}
             </div>
@@ -145,16 +198,15 @@ export default function MarqueeProjects() {
           </p>
         </div>
 
-        {/* Marquee Row 1 */}
+        {/* Marquee Rows */}
         <div className="whitespace-nowrap overflow-hidden mb-10 mx-4 md:mx-20">
-          <div className="animate-marquee flex gap-8">
+          <div className="animate-marquee flex gap-4 sm:gap-6 md:gap-8">
             {line1Projects.concat(line1Projects).map((project, index) =>
               renderCard(project, index, 'line1')
             )}
           </div>
         </div>
 
-        {/* Marquee Row 2 */}
         <div className="whitespace-nowrap overflow-hidden mx-4 md:mx-20">
           <div className="animate-marquee-reverse flex gap-8">
             {line2Projects.concat(line2Projects).map((project, index) =>
@@ -163,7 +215,7 @@ export default function MarqueeProjects() {
           </div>
         </div>
 
-        {/* View All Projects Button */}
+        {/* View All Button */}
         <div className="mt-12 text-center" data-aos="zoom-in">
           <Link
             href="/projects/cli-based"
