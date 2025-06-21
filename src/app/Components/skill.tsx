@@ -113,7 +113,7 @@ const Skill = () => {
             latest web development trends and technologies.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 place-items-center">
             {skills.map((skill, i) => (
               <div
                 key={i}
