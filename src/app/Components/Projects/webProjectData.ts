@@ -6,6 +6,7 @@ export const Projects = [
     video: "/Assest/Vedios/Morant-Rental-Car.mp4",
     link: "https://morant-car-rental-market-place-builder.vercel.app/",
     github: "https://github.com/your-morant-repo",
+    tech: ["nextjs", "tailwind", "typescript" , "stripe" , "clerk" , "cms"],
   },
   {
     title: "Ecommerce CSS Project",
@@ -14,6 +15,7 @@ export const Projects = [
     video: "/Assest/Vedios/my_shop.mp4",
     link: "https://my-shop-ecommerce-flax.vercel.app/cart",
     github: "https://github.com/your-ecommerce-css-repo",
+    tech: ["Nextjs", "tailwind"],
   },
   {
     title: "On The Trail – Travel Blog",
@@ -22,6 +24,7 @@ export const Projects = [
     video: "/Assest/Vedios/Blog-web.mp4",
     link: "https://milestone-3-blog-website-gray.vercel.app/Contact",
     github: "https://github.com/your-blog-repo",
+    tech: ["nextjs", "tailwind"],
   },
   {
     title: "Pix Resume",
@@ -31,6 +34,7 @@ export const Projects = [
     link: "https://buildresume123-5y0a67xk7-areeba-yaseens-projects.vercel.app/samplecv.html",
     github:
       "https://github.com/areebayaseen15/Resume-Builder/tree/main/Resume-builder-website",
+    tech: ["html", "css", "typescript"],
   },
   {
     title: "Sidcup Golf Website",
@@ -39,17 +43,17 @@ export const Projects = [
     video: "/Assest/Vedios/sidcup_Golf.mp4",
     link: "https://multiple-pages-website-custom-css.vercel.app/",
     github: "https://github.com/your-sidcup-repo",
+    tech: ["nextjs", "css"],
   },
-
   {
     title: "Portfolio Website",
     description:
-      "A personal portfolio developed using Next.js and tailwind CSS, highlighting skills, achievements, and projects with a clean, modern user interface.",
-    video: "/Assest/Vedios/portfolio-website.mp4",
+      "A personal portfolio developed using Next.js and Tailwind CSS, highlighting skills, achievements, and projects with a clean, modern user interface.",
+    video: "/Assest/Vedios/portfolio-tailwind.mp4",
     link: "https://q2-milestones.vercel.app/",
     github: "https://github.com/areebayaseen15/Q2-milestones",
+    tech: ["nextjs", "tailwind"],
   },
-
   {
     title: "Portfolio Website",
     description:
@@ -57,6 +61,7 @@ export const Projects = [
     video: "/Assest/Vedios/custom-portfolio.mp4",
     link: "https://my-portfolio-custom-css-beige.vercel.app/",
     github: "https://github.com/areebayaseen15/My-Portfolio-Custom-css",
+    tech: ["nextjs", "css"],
   },
   {
     title: "Virtual Assistant (Jarvis)",
@@ -65,6 +70,7 @@ export const Projects = [
     video: "/Assest/Vedios/jarvis.mp4",
     link: "https://banoqabil-final-project.vercel.app/",
     github: "https://github.com/your-jarvis-repo",
+    tech: ["html", "css", "js"],
   },
   {
     title: "Food Fusion Website Clone",
@@ -74,6 +80,7 @@ export const Projects = [
     link: "https://milestone2-assignment-multiple-pages-with-tailwindcss.vercel.app/",
     github:
       "https://github.com/areebayaseen15/milestone2-assignment-multiple-pages-with-tailwindcss",
+    tech: ["nextjs", "tailwind"],
   },
   {
     title: "Netflix Clone",
@@ -82,6 +89,7 @@ export const Projects = [
     video: "/Assest/Vedios/Netflix.mp4",
     link: "https://areebayaseen15.github.io/NetflixClon-html-css/",
     github: "https://github.com/areebayaseen15/NetflixClon-html-css",
+    tech: ["html", "css"],
   },
   {
     title: "Bano Qabil Website Clone",
@@ -90,5 +98,6 @@ export const Projects = [
     video: "/Assest/Vedios/BanoQabil.mp4",
     link: "https://bnoqabil-website-project.vercel.app/",
     github: "https://github.com/areebayaseen15/Bnoqabil-WebsiteProject",
+    tech: ["html", "css"],
   },
 ];
