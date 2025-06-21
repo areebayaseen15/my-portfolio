@@ -15,7 +15,7 @@ import {
 import { Projects } from "./agentProjectsData"; 
 import { TbRoute } from "react-icons/tb";
 
-// Tech Icons
+//  Icons
 const techIcons: Record<string, { icon: JSX.Element; label: string }> = {
   react: { icon: <SiReact className="text-cyan-400" />, label: "React" },
   typescript: { icon: <SiTypescript className="text-blue-400" />, label: "TypeScript" },
