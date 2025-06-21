@@ -108,8 +108,8 @@ export default function MarqueeProjects() {
   const renderCard = (project: any, index: number, line: string) => (
     <div
       key={`${line}-${index}`}
-      className="relative min-w-[250px] sm:min-w-[300px] md:min-w-[330px] max-w-[300px] h-auto rounded-xl overflow-hidden group"
-    >
+      className="relative w-[270px] sm:w-[300px] md:w-[330px] h-auto shrink-0 rounded-xl overflow-hidden group">
+
       <div className="animate-snake-border p-[2px] rounded-xl">
         <div className="bg-black/30 backdrop-blur-md h-full rounded-xl flex flex-col overflow-hidden hover:scale-105 transition-transform duration-300">
           <video
@@ -199,21 +199,24 @@ export default function MarqueeProjects() {
         </div>
 
         {/* Marquee Rows */}
-        <div className="whitespace-nowrap overflow-hidden mb-10 mx-4 md:mx-20">
-          <div className="animate-marquee flex gap-4 sm:gap-6 md:gap-8">
-            {line1Projects.concat(line1Projects).map((project, index) =>
-              renderCard(project, index, 'line1')
-            )}
-          </div>
-        </div>
+{/* Line 1 Projects Marquee */}
+<div className="overflow-hidden mb-10 mx-4 md:mx-20">
+  <div className="animate-marquee inline-flex flex-nowrap gap-4 sm:gap-6 md:gap-8">
+    {line1Projects.concat(line1Projects).map((project, index) =>
+      renderCard(project, index, 'line1')
+    )}
+  </div>
+</div>
 
-        <div className="whitespace-nowrap overflow-hidden mx-4 md:mx-20">
-          <div className="animate-marquee-reverse flex gap-8">
-            {line2Projects.concat(line2Projects).map((project, index) =>
-              renderCard(project, index, 'line2')
-            )}
-          </div>
-        </div>
+
+{/* Line 2 Projects Marquee */}
+<div className="overflow-hidden mx-4 md:mx-20">
+  <div className="animate-marquee-reverse inline-flex flex-nowrap gap-4 sm:gap-6 md:gap-8">
+    {line2Projects.concat(line2Projects).map((project, index) =>
+      renderCard(project, index, 'line2')
+    )}
+  </div>
+</div>
 
         {/* View All Button */}
         <div className="mt-12 text-center" data-aos="zoom-in">
