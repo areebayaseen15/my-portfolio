@@ -9,12 +9,14 @@ const line1Projects = [
     title: 'LinkedIn Agent',
     description: 'Posts on LinkedIn using OpenAI Agent SDK.',
     video: '/Assest/Vedios/linkdin-agent.mp4',
+    thumbnail: '/Assest/Thumbnails/linkedin-thumbnail.jpg',
     github: 'https://github.com/your-linkedin-agent-repo',
   },
   {
     title: 'Morant Car Rental Website',
     description: 'Car rental platform using Next.js and Clerk.',
     video: '/Assest/Vedios/Morant-Rental-Car.mp4',
+    thumbnail: '/Assest/Thumbnails/morant-thumbnail.jpg',
     link: 'https://morant-car-rental-market-place-builder.vercel.app/',
     github: 'https://github.com/your-morant-repo',
   },
@@ -22,6 +24,7 @@ const line1Projects = [
     title: 'Ecommerce Shoppers Website',
     description: 'Responsive shop layout using Next.js.',
     video: '/Assest/Vedios/my_shop.mp4',
+    thumbnail: '/Assest/Thumbnails/shop-thumbnail.jpg',
     link: 'https://my-shop-ecommerce-flax.vercel.app/cart',
     github: 'https://github.com/your-ecommerce-css-repo',
   },
@@ -29,6 +32,7 @@ const line1Projects = [
     title: 'On The Trail',
     description: 'A beautiful blog website.',
     video: '/Assest/Vedios/Blog-web.mp4',
+    thumbnail: '/Assest/Thumbnails/blog-thumbnail.jpg',
     link: 'https://milestone-3-blog-website-gray.vercel.app/Contact',
     github: 'https://github.com/your-blog-repo',
   },
@@ -39,6 +43,7 @@ const line2Projects = [
     title: 'Sidcup Golf',
     description: 'Multi-page golf site using custom CSS.',
     video: '/Assest/Vedios/sidcup_Golf.mp4',
+    thumbnail: '/Assest/Thumbnails/golf-thumbnail.jpg',
     link: 'https://multiple-pages-website-custom-css.vercel.app/',
     github: 'https://github.com/your-sidcup-repo',
   },
@@ -46,6 +51,7 @@ const line2Projects = [
     title: 'Pix Resume',
     description: 'Resume builder using TypeScript and HTML.',
     video: '/Assest/Vedios/resume.mp4',
+    thumbnail: '/Assest/Thumbnails/resume-thumbnail.jpg',
     link: 'https://buildresume123-5y0a67xk7-areeba-yaseens-projects.vercel.app/samplecv.html',
     github: 'https://github.com/areebayaseen15/Resume-Builder/tree/main/Resume-builder-website',
   },
@@ -53,6 +59,7 @@ const line2Projects = [
     title: 'Portfolio Website',
     description: 'My personal dev portfolio.',
     video: '/Assest/Vedios/portfolio-tailwind.mp4',
+    thumbnail: '/Assest/Thumbnails/portfolio-thumbnail.jpg',
     link: 'https://q2-milestones.vercel.app/',
     github: 'https://github.com/areebayaseen15/Q2-milestones',
   },
@@ -60,6 +67,7 @@ const line2Projects = [
     title: 'Virtual Assistant',
     description: 'Built with HTML, CSS, JS & Gemini API.',
     video: '/Assest/Vedios/jarvis.mp4',
+    thumbnail: '/Assest/Thumbnails/jarvis-thumbnail.jpg',
     link: 'https://banoqabil-final-project.vercel.app/',
     github: 'https://github.com/your-jarvis-repo',
   },
@@ -73,7 +81,7 @@ export default function MarqueeProjects() {
   const renderCard = (project: any, index: number, line: string) => (
     <div
       key={`${line}-${index}`}
-      className="relative min-w-[300px] max-w-[300px] h-auto rounded-xl overflow-hidden group"
+      className="relative min-w-[330px] max-w-[300px] h-auto rounded-xl overflow-hidden group"
     >
       <div className="animate-snake-border p-[2px] rounded-xl">
         <div className="bg-black/30 backdrop-blur-md h-full rounded-xl flex flex-col overflow-hidden hover:scale-105 transition-transform duration-300">
@@ -83,8 +91,10 @@ export default function MarqueeProjects() {
             loop
             muted
             playsInline
+            poster={project.thumbnail}
             className="w-full h-36 object-cover rounded-t-xl"
           />
+
           <div className="p-4 flex flex-col gap-2 text-left">
             <h2 className="text-cyan-300 text-lg font-semibold">{project.title}</h2>
             <p className="text-sm text-gray-300">{project.description}</p>
@@ -123,40 +133,40 @@ export default function MarqueeProjects() {
   );
 
   return (
-    <div id="projects"  className=" relative bg-gradient-to-r from-black via-blue-900 to-black py-20 text-white overflow-hidden">
+    <div
+      id="projects"
+      className="relative bg-gradient-to-r from-black via-blue-900 to-black py-20 text-white overflow-hidden"
+    >
       {/* Background animation blobs */}
       <div className="absolute -top-40 -left-40 w-[400px] h-[400px] bg-cyan-400 opacity-20 rounded-full blur-3xl animate-pulse z-0" />
       <div className="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-blue-500 opacity-10 rounded-full blur-2xl animate-ping z-0" />
 
       <div className="relative z-10">
         <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl font-bold mb-4 space-x-2">
-                 <span className="text-white">My</span>
+          <h2 className="text-4xl font-bold mb-4">
+            <span className="text-white">My</span>{' '}
             <span className="text-cyan-400">Projects</span>
-         
           </h2>
-
           <p className="text-gray-300 max-w-2xl mx-auto">
-            These projects represent milestones in my front-end journey. Hover to
-            explore.
+            These projects represent milestones in my front-end journey. Hover to explore.
           </p>
         </div>
 
         {/* Marquee Row 1 */}
         <div className="whitespace-nowrap overflow-hidden mb-10 mx-4 md:mx-20">
           <div className="animate-marquee flex gap-8">
-            {line1Projects
-              .concat(line1Projects)
-              .map((project, index) => renderCard(project, index, 'line1'))}
+            {line1Projects.concat(line1Projects).map((project, index) =>
+              renderCard(project, index, 'line1')
+            )}
           </div>
         </div>
 
         {/* Marquee Row 2 */}
         <div className="whitespace-nowrap overflow-hidden mx-4 md:mx-20">
           <div className="animate-marquee-reverse flex gap-8">
-            {line2Projects
-              .concat(line2Projects)
-              .map((project, index) => renderCard(project, index, 'line2'))}
+            {line2Projects.concat(line2Projects).map((project, index) =>
+              renderCard(project, index, 'line2')
+            )}
           </div>
         </div>
 
