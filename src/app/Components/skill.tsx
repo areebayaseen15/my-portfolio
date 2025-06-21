@@ -101,7 +101,7 @@ const Skill = () => {
 
       <section className="body-font relative z-10">
         <div className="container px-5 mx-auto text-center">
-         <h1 className="text-4xl font-bold mb- space-x-2">
+         <h1 className="text-4xl font-bold mb-5 space-x-2">
             <span className="text-cyan-400">Tech</span>
             <span className="text-white">Stack </span>
 
