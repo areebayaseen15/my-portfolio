@@ -7,14 +7,12 @@
     animation: spin 12s linear infinite;
   }
 }
-.custom-image{
-    background-image: url("../../public/Assest/Pictures/download\ \(1\).jpeg")
-}
 
 html {
   scroll-behavior: smooth;
 }
 
+/* === Snake Border === */
 @keyframes snakeBorder {
   0% {
     background-position: 0% 50%;
@@ -31,41 +29,47 @@ html {
   animation: snakeBorder 4s linear infinite;
 }
 
-
-
+/* === Marquee Animations === */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 5s linear infinite;
 }
 
 .animate-marquee-reverse {
-  animation: marquee-reverse 30s linear infinite;
+  animation: marquee-reverse 5s linear infinite;
 }
 
-@keyframes snakeBorder {
-  0% {
-    background-position: 0% 50%;
+/* 🔥 Faster marquee for small screens only */
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 2s;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+
+  .animate-marquee-reverse {
+    animation-duration: 2s;
   }
 }
 
+/* === Background Blob Animations === */
 @keyframes blob1 {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate(0px, 0px) scale(1);
   }
   50% {
@@ -74,8 +78,7 @@ html {
 }
 
 @keyframes blob2 {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate(0px, 0px) scale(1);
   }
   50% {
@@ -111,7 +114,7 @@ html {
   right: -80px;
 }
 
-
+/* === Border Spin Animation === */
 @keyframes borderSpin {
   0% {
     border-image: linear-gradient(45deg, cyan, blue) 1;
