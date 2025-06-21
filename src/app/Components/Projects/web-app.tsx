@@ -18,7 +18,7 @@ import {
   SiClerk,
   SiOpenai,
   SiContentful,
-} from "react-icons/si"; // For CMS (Contentful) or replace with another if needed
+} from "react-icons/si"; 
 import { Projects } from "./webProjectData";
 
 export const techIcons: Record<string, { icon: JSX.Element; label: string }> = {
