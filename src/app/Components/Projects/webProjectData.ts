@@ -54,9 +54,9 @@ export const Projects = [
     title: "Portfolio Website",
     description:
       "A personal portfolio developed using Next.js and custom CSS, highlighting skills, achievements, and projects with a clean, modern user interface.",
-    video: "/Assest/Vedios/portfolio-tailwind.mp4",
+    video: "/Assest/Vedios/custom-portfolio.mp4",
     link: "https://my-portfolio-custom-css-beige.vercel.app/",
-    github: "https://github.com/your-portfolio-repo",
+    github: "https://github.com/areebayaseen15/My-Portfolio-Custom-css",
   },
   {
     title: "Virtual Assistant (Jarvis)",
@@ -88,7 +88,7 @@ export const Projects = [
     description:
       "A responsive and beginner-friendly clone of the Bano Qabil website created with HTML and CSS — reflects focus on structure, spacing, and layout.",
     video: "/Assest/Vedios/BanoQabil.mp4",
-    link: "https://areebayaseen15.github.io/Bnoqabil-WebsiteProject/",
+    link: "https://bnoqabil-website-project.vercel.app/",
     github: "https://github.com/areebayaseen15/Bnoqabil-WebsiteProject",
   },
 ];
